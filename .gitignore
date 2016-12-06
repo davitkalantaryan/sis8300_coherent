@@ -8,3 +8,4 @@ modules.order
 *.o.cmd
 .tmp_versions
 .upciedev.ko.cmd
+.sis8300_coherent.ko.cmd
