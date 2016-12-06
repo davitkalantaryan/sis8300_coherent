@@ -25,22 +25,26 @@ case $1 in
 		;;
 	*)
 		cp $USUAL_SRC_DIR0/sis8300_main.c $TARGET_SRC_DIR/.
+		
+		# headers
+		cp $COMMON_SRC/sis8300_io.h $TARGET_SRC_DIR/.
+		cp $COMMON_SRC/adc_timer_interface_io.h $TARGET_SRC_DIR/.
 
 		# headers
-		cp $COMMON_SRC/mtcagen_exp.h $TARGET_SRC_DIR/.
-		cp $COMMON_SRC/mtcagen_incl.h $TARGET_SRC_DIR/.
-		cp $COMMON_SRC/mtcagen_io.h $TARGET_SRC_DIR/.
-		cp $COMMON_SRC/mtcagen_irq_all.h $TARGET_SRC_DIR/.
-		cp $COMMON_SRC/mtcagen_irq_all.h $TARGET_SRC_DIR/.
-		cp $COMMON_SRC/pci-driver-added-zeuthen.h $TARGET_SRC_DIR/.
-		cp $COMMON_SRC/version_dependence.h $TARGET_SRC_DIR/.
+		#cp $COMMON_SRC/mtcagen_exp.h $TARGET_SRC_DIR/.
+		#cp $COMMON_SRC/mtcagen_incl.h $TARGET_SRC_DIR/.
+		#cp $COMMON_SRC/mtcagen_io.h $TARGET_SRC_DIR/.
+		#cp $COMMON_SRC/mtcagen_irq_all.h $TARGET_SRC_DIR/.
+		#cp $COMMON_SRC/mtcagen_irq_all.h $TARGET_SRC_DIR/.
+		#cp $COMMON_SRC/pci-driver-added-zeuthen.h $TARGET_SRC_DIR/.
+		#cp $COMMON_SRC/version_dependence.h $TARGET_SRC_DIR/.
 		
 		# starting from this headers and symbols from universal driver
-		cp $COMMON_SRC/debug_functions.h $TARGET_SRC_DIR/.
-		cp $COMMON_SRC/pciedev_ufn.h $TARGET_SRC_DIR/.
-		cp $COMMON_SRC/pciedev_io.h $TARGET_SRC_DIR/.
-		cp $COMMON_SRC/criticalregionlock.h $TARGET_SRC_DIR/.
-		cp $COMMON_SRC/read_write_inline.h $TARGET_SRC_DIR/.		
+		#cp $COMMON_SRC/debug_functions.h $TARGET_SRC_DIR/.
+		#cp $COMMON_SRC/pciedev_ufn.h $TARGET_SRC_DIR/.
+		#cp $COMMON_SRC/pciedev_io.h $TARGET_SRC_DIR/.
+		#cp $COMMON_SRC/criticalregionlock.h $TARGET_SRC_DIR/.
+		#cp $COMMON_SRC/read_write_inline.h $TARGET_SRC_DIR/.		
 						
 		;;
 esac

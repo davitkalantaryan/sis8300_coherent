@@ -54,5 +54,5 @@ clean:
 	
 #EXTRA_CFLAGS	+= -I/usr/include
 #EXTRA_CFLAGS	+= -I/doocs/develop/include
-#EXTRA_CFLAGS	+= -I/doocs/develop/common/include
+EXTRA_CFLAGS	+= -I$(CUR_DIR)/mtcagen
 EXTRA_CFLAGS	+= -DUSE_SEMAPHORE

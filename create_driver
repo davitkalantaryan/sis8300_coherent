@@ -1,0 +1,22 @@
+#!/bin/bash
+#
+# Created on: 17 Oct 2014
+# Created by: D. Kalantaryan   (davit.kalantaryan@desy.de)
+#
+# This script get corresponding sources, compiles them 
+# finally links them and creates 'upciedev.ko' kernel object file and
+# 'mtcagen.ko' file
+#
+
+# This will get the sources for 'upciedev'
+git submodule update --init --recursive   
+cd mtcagen
+./create_driver
+cd ..
+mkdir -p ko_files
+cd ko_files
+cp ../mtcagen/ko_files/*.ko .
+cd ..
+make
+#cp Module.symvers ../.
+#cp sis8300_coherent.ko ko_files/.

@@ -1,0 +1,3 @@
+[submodule "mtcagen"]
+	path = mtcagen
+	url = https://github.com/davitkalantaryan/mtcagen
