@@ -1,0 +1,46 @@
+#!/bin/sh
+
+HOSTNAME2=`hostname`
+KVERSION=`uname -r`
+
+#echo "HOSTNAME="$HOSTNAME2
+#echo "KVERSION="$KVERSION
+
+#This script starts pitzlsradc program.
+DOOCS_DEV=/afs/ifh.de/group/pitz/doocs/develop
+USUAL_SRC_DIR0=$DOOCS_DEV/kalantar/programs/cpp/works/drivers/sources
+#COMMON_SRC=$DOOCS_DEV/common/include
+COMMON_SRC=$USUAL_SRC_DIR0
+#TARGET_SRC_DIR=/afs/ifh.de/group/pitz/doocs/develop/kalantar/programs/cpp/works/drivers/projects/pcie_gen/pcie_gen_usual_mkfl
+#TARGET_SRC_DIR=/afs/ifh.de/group/pitz/doocs/develop/kalantar/programs/cpp/works/drivers/projects/pcie_gen/mtcagen.git
+TARGET_SRC_DIR=.
+KVERSION_WIT_UNDER=_$KVERSION
+
+
+case $1 in
+	delete)
+		rm -f $TARGET_SRC_DIR/*.c
+		rm -f $TARGET_SRC_DIR/*.h
+		
+		;;
+	*)
+		cp $USUAL_SRC_DIR0/sis8300_main.c $TARGET_SRC_DIR/.
+
+		# headers
+		cp $COMMON_SRC/mtcagen_exp.h $TARGET_SRC_DIR/.
+		cp $COMMON_SRC/mtcagen_incl.h $TARGET_SRC_DIR/.
+		cp $COMMON_SRC/mtcagen_io.h $TARGET_SRC_DIR/.
+		cp $COMMON_SRC/mtcagen_irq_all.h $TARGET_SRC_DIR/.
+		cp $COMMON_SRC/mtcagen_irq_all.h $TARGET_SRC_DIR/.
+		cp $COMMON_SRC/pci-driver-added-zeuthen.h $TARGET_SRC_DIR/.
+		cp $COMMON_SRC/version_dependence.h $TARGET_SRC_DIR/.
+		
+		# starting from this headers and symbols from universal driver
+		cp $COMMON_SRC/debug_functions.h $TARGET_SRC_DIR/.
+		cp $COMMON_SRC/pciedev_ufn.h $TARGET_SRC_DIR/.
+		cp $COMMON_SRC/pciedev_io.h $TARGET_SRC_DIR/.
+		cp $COMMON_SRC/criticalregionlock.h $TARGET_SRC_DIR/.
+		cp $COMMON_SRC/read_write_inline.h $TARGET_SRC_DIR/.		
+						
+		;;
+esac

@@ -1,0 +1,10 @@
+*.ko
+*.o
+*Module.symvers*
+#!Module.symvers.upciedev
+modules.order
+*.mod.c
+#cp_all_files
+*.o.cmd
+.tmp_versions
+.upciedev.ko.cmd
